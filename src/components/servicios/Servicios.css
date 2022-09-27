@@ -1,0 +1,47 @@
+.img-servicios{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.main-servicios{
+    padding: 20px 70px 0px 95px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.banner-servicios{
+    position: relative;
+    left: 50;
+    top:0;
+    border-radius: 6px;
+    padding: 5px;
+    
+}
+.banner-servicios h5{
+    position: absolute;
+    z-index: 1;
+    background-color: #F0B44e;
+    left: 30%;
+    top:-1%;
+    width: 110px;
+    text-align: center;
+    height: 20px;
+    border-radius: 6px;
+}
+.button-servicios{
+    position: absolute;
+    z-index: 1;
+    left: 12%;
+    top:80%;
+    width: 198px;
+    height: 40px;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    color: #3c1f1c;
+    font-size: 18px;
+}
+.button-servicios:hover{
+    background-color: #F0B44e;
+}

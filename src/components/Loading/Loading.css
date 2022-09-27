@@ -1,0 +1,19 @@
+.main-loading h1{
+    height: 0px;
+    font-family: Arial;
+    text-align: center;
+}
+
+.main-loading img{
+    width: 30%;
+    margin-top: 3%;
+    margin-left: 35%;
+}
+
+  .main-spinner{
+    position: absolute;
+    top:80%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }

@@ -1,0 +1,13 @@
+.container-reporte{
+    width:500px;
+    height: 850px;
+}
+
+.Embed-container{
+    position: absolute;
+    width: 1400px;
+    height: 820px;
+}
+.container-footer{
+    margin-top: 50%;
+}

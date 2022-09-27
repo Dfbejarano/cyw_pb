@@ -1,0 +1,38 @@
+.buttom-main {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 18%;
+}
+
+.create-products Button{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 8%;
+}
+
+.create-products form{
+    margin-left: 2%;
+}
+
+.FileUpload {
+    border: 1px solid #eee;
+    border-radius: 2px;
+    margin: auto;
+    height: 45px;
+    width: 95%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    justify-content: center;
+}
+
+.FileUpload button{
+    border: 1px solid;
+    border-radius: 2px;
+    margin: auto;
+    margin-left: 10%;
+    margin-top: 1%;
+}
+
+.button-final{
+    margin-bottom: 2%;
+}
