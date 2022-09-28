@@ -22,9 +22,19 @@ function App() {
   const [confirmed, setconfirmed] = useState(false);
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
+  const [open3, setOpen3] = useState(false);
+
+
+  function handleSubmit2 () {
+    setOpen3(true);
+  }
 
   function handleSubmit (e) {
     console.log(confirmed);
+    if (open3) {
+      navigate('/home');
+    } 
+    else{    
         //preventDefault para que el formulario no renderice
         e.preventDefault();
         if (email && passw) {
@@ -57,6 +67,7 @@ function App() {
     else{
       setOpen(true);
     }
+  }
   }
 
 
@@ -100,7 +111,7 @@ function App() {
               </Button.Content>
             </Button>
             <h3></h3>
-            <Button animated href='http://localhost:3000/home'>
+            <Button animated onClick={handleSubmit2}>
               <Button.Content visible >Iniciar sin autenticar</Button.Content>
               <Button.Content hidden>
                 <Icon name='arrow right' />
