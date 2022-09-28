@@ -92,7 +92,9 @@ export default function App() {
     { field: 'Categoria', headerName: 'CATEGORIA', editable: true, width: 150},
     { field: 'Subcategoria', headerName: 'SUB CATEGORIA', editable: true, type: 'singleSelect', width: 150, valueOptions: ['Artesanos', 'Categorias', 'Conos y Vasos', 
     'Copas', 'Infantiles', 'Vegano']},
-    { field: 'ERP', headerName: 'ID ERP', editable: true, width: 110, type: 'number'}
+    { field: 'ERP', headerName: 'ID ERP', editable: true, width: 110, type: 'number'},
+    { field: 'indicador_sal_bebida_dulce', headerName: 'INDICADOR', editable: true, type: 'singleSelect', width: 150,  
+    valueOptions: ['SAL', 'DULCE', 'BEBIDAS'],}
   ]
 
   return (
