@@ -52,10 +52,6 @@ export default function App() {
     },
   );
 
-  const handleProcessRowUpdateError = React.useCallback((error) => {
-    setSnackbar({ children: error.message, severity: 'error' });
-    console.log(error.message);
-  }, []);
 
   const [isLoading, setIsLoading] = React.useState(false);
 
@@ -117,7 +113,6 @@ export default function App() {
           pageSize={20}
           editMode="row"
           processRowUpdate={processRowUpdate}
-          onProcessRowUpdateError={handleProcessRowUpdateError}
           rowsPerPageOptions={[20]}
           experimentalFeatures={{ newEditingApi: true }}
           GridToolbar 

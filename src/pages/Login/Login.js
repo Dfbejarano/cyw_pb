@@ -33,6 +33,8 @@ function App() {
     console.log(confirmed);
     if (open3) {
       navigate('/home');
+      localStorage.setItem("confirmed", "false");
+      localStorage.removeItem("Role");
     } 
     else{    
         //preventDefault para que el formulario no renderice

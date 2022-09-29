@@ -20,14 +20,6 @@ export default function Layout(props) {
       localStorage.removeItem("Role");
       navigate("/");
     };
-  const clearCacheData = () => {
-    caches.keys().then((names) => {
-      names.forEach((name) => {
-        caches.delete(name);
-        
-      });
-    });
-  };
   return (
       <div id="root" class ='menu-header'>
         <Menu stackable>
@@ -112,8 +104,7 @@ export default function Layout(props) {
             name='sign-in'
             disabled={localStorage.getItem("confirmed")==="false"}
             onClick={() => {
-              Cerrarsesion();
-              clearCacheData();}}
+              Cerrarsesion();}}
             position='right'
           ><FaSignOutAlt size={20}/>
             &nbsp;&nbsp;Cerrar sesión
