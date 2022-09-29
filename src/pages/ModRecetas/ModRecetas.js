@@ -152,12 +152,7 @@ export default function App() {
     
     axios({
       method: 'GET',
-      url: urlvideos,
-      mode: 'no-cors',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-      }
+      url: urlvideos
     }).then((response) => {
       const productid = response.data.data.map(product => product.id); 
       const productoname = response.data.data.map(product => product.attributes.nombre); 
@@ -177,12 +172,7 @@ export default function App() {
     });
     axios({
       method: 'GET',
-      url: urlinstructivos,
-      mode: 'no-cors',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-      }
+      url: urlinstructivos
     }).then((response) => { 
       const productid = response.data.data.map(product => product.id); 
       const productoname = response.data.data.map(product => product.attributes.nombre); 
