@@ -17,7 +17,13 @@ export default function Layout(props) {
 
     const Cerrarsesion = (event) => {
       localStorage.setItem("confirmed", "false");
-      localStorage.removeItem("Role");
+      localStorage.setItem("Recetas", "false");
+      localStorage.setItem("Ventas", "false");
+      localStorage.setItem("Punto_venta", "false");
+      localStorage.setItem("modificador_recetas", "false");
+      localStorage.setItem("modificador_pdv", "false");
+      localStorage.setItem("modificador_pdv", "false");
+      localStorage.setItem("modificador_productos", "false");
       navigate("/");
     };
   return (
@@ -34,12 +40,12 @@ export default function Layout(props) {
                 ><ImHome size={20}/>
                 &nbsp;&nbsp;Home</DropdownItem>
                 <DropdownItem 
-                disabled={localStorage.getItem("confirmed")==="false"}
+                disabled={localStorage.getItem("Ventas")==="false"}
                 as={Link} to="/ventas"
                 ><AiOutlineFundProjectionScreen size={20}/>
                 &nbsp;&nbsp;Ventas</DropdownItem>
                 <DropdownItem 
-                disabled={localStorage.getItem("confirmed")==="false"}
+                disabled={localStorage.getItem("Recetas")==="false"}
                 as={Link} to="/recetas"
                 ><MdOutlineFoodBank size={20}/>
                 &nbsp;&nbsp;Recetas</DropdownItem>
@@ -58,9 +64,7 @@ export default function Layout(props) {
             </Dropdown>
           </Menu>
           <Menu >
-            <Dropdown item text='Administración' floating 
-                disabled={localStorage.getItem("confirmed")==="false"}
-            >
+            <Dropdown item text='Administración' floating disabled={localStorage.getItem("confirmed")==="false"}>
               <DropdownMenu>
                 <DropdownItem
                 as={Link} to="/enconstruccion"
@@ -84,17 +88,17 @@ export default function Layout(props) {
                 &nbsp;&nbsp;Modificar directorio de puntos de venta</DropdownItem>
                 <DropdownItem
                 as={Link} to="/productosAloha"
-                disabled={localStorage.getItem("confirmed")==="false"}
+                disabled={localStorage.getItem("modificador_productos")==="false"}
                 ><GoChecklist size={20}/>
                 &nbsp;&nbsp;Modificar categoria de productos</DropdownItem>
                 <DropdownItem
                 as={Link} to="/puntosventaaloha"
-                disabled={localStorage.getItem("confirmed")==="false"}
+                disabled={localStorage.getItem("modificador_pdv")==="false"}
                 ><GoChecklist size={20}/>
                 &nbsp;&nbsp;Modificar información puntos de venta</DropdownItem>
                 <DropdownItem
                 as={Link} to="/modrecetas"
-                disabled={localStorage.getItem("confirmed")==="false"}
+                disabled={localStorage.getItem("modificador_productos")==="false"}
                 ><GoChecklist size={20}/>
                 &nbsp;&nbsp;Modificar receta</DropdownItem>
               </DropdownMenu>

@@ -13,11 +13,9 @@ function App() {
   const navigate = useNavigate();
 
   //Api users
-  const baseURL = "http://192.168.181.41:1337/api/auth/local";
-
 
   // estados de login
-  const [email, setuser] = useState();
+  const [user, setuser] = useState();
   const [passw, setpass] = useState();
   const [confirmed, setconfirmed] = useState(false);
   const [open, setOpen] = useState(false);
@@ -30,30 +28,34 @@ function App() {
   }
 
   function handleSubmit (e) {
-    console.log(confirmed);
+    
     if (open3) {
       navigate('/home');
       localStorage.setItem("confirmed", "false");
-      localStorage.removeItem("Role");
+      localStorage.setItem("Recetas", "false");
+      localStorage.setItem("Ventas", "false");
+      localStorage.setItem("Punto_venta", "false");
+      localStorage.setItem("modificador_recetas", "false");
+      localStorage.setItem("modificador_pdv", "false");
+      localStorage.setItem("modificador_pdv", "false");
+      localStorage.setItem("modificador_productos", "false");
     } 
     else{    
         //preventDefault para que el formulario no renderice
         e.preventDefault();
-        if (email && passw) {
+        if (user && passw) {
           axios({
-          method: 'POST',
-          url: baseURL,
-          data: {
-            identifier: `${email}`, 
-            password: `${passw}`, 
-          }
+          method: 'GET',
+          url: `http://192.168.181.41:8090/api/usuarios?filters[usuario][$eq]=${user}`
         }).then((response) => {
-          setconfirmed(response.data.user.confirmed);
-          setconfirmed(response.data.user.confirmed);
-
-          if (response.data.user.confirmed) {
-            window.localStorage.setItem('Role', response.data.user.Role);
-            window.localStorage.setItem('confirmed', response.data.user.confirmed);
+          if (passw == response.data.data.map(attrib => attrib.attributes.contrasena)) {
+            window.localStorage.setItem('confirmed', "true");
+            window.localStorage.setItem('Recetas', response.data.data.map(attrib => attrib.attributes.Recetas));
+            window.localStorage.setItem('Ventas', response.data.data.map(attrib => attrib.attributes.Ventas));
+            window.localStorage.setItem('Punto_venta', response.data.data.map(attrib => attrib.attributes.Punto_venta));
+            window.localStorage.setItem('modificador_recetas', response.data.data.map(attrib => attrib.attributes.modificador_recetas));
+            window.localStorage.setItem('modificador_pdv', response.data.data.map(attrib => attrib.attributes.modificador_pdv));
+            window.localStorage.setItem('modificador_productos', response.data.data.map(attrib => attrib.attributes.modificador_productos));
             navigate('/home');
           } 
           else{
@@ -89,12 +91,12 @@ function App() {
             <img src={logo} alt='Icon Crepes y Waffles'/>
             <h2>INTRANET CREPES Y WAFFLES</h2>
             <div class ="form-group">
-                <label style={{fontSize: '15px'}}>Correo Crepes</label>
+                <label style={{fontSize: '15px'}}>Usuario Intranet</label>
                 <input 
-                type="email" 
-                value={email} 
+                type="text" 
+                value={user} 
                 style={{fontSize: '15px'}}
-                placeholder='Ingrese su correo de dominio crepes' 
+                placeholder='Ingrese su usuario' 
                 onChange={handleChangeUser}/>
             </div>
             <div class ="form-group">
