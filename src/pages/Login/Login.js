@@ -46,7 +46,7 @@ function App() {
         if (user && passw) {
           axios({
           method: 'GET',
-          url: `http://192.168.181.41:8090/api/usuarios?filters[usuario][$eq]=${user}`
+          url: `http://190.61.44.14:8090/api/usuarios?filters[usuario][$eq]=${user}`
         }).then((response) => {
           if (passw == response.data.data.map(attrib => attrib.attributes.contrasena)) {
             window.localStorage.setItem('confirmed', "true");
