@@ -22,7 +22,6 @@ export default function Layout(props) {
       localStorage.setItem("Punto_venta", "false");
       localStorage.setItem("modificador_recetas", "false");
       localStorage.setItem("modificador_pdv", "false");
-      localStorage.setItem("modificador_pdv", "false");
       localStorage.setItem("modificador_productos", "false");
       navigate("/");
     };
@@ -98,7 +97,7 @@ export default function Layout(props) {
                 &nbsp;&nbsp;Modificar información puntos de venta</DropdownItem>
                 <DropdownItem
                 as={Link} to="/modrecetas"
-                disabled={localStorage.getItem("modificador_productos")==="false"}
+                disabled={localStorage.getItem("modificador_recetas")==="false"}
                 ><GoChecklist size={20}/>
                 &nbsp;&nbsp;Modificar receta</DropdownItem>
               </DropdownMenu>
